@@ -1,0 +1,21 @@
+{
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"A simple demo app.": {
+			"type": "string",
+			"minLength": 1
+		},
+		"Welcome to React": {
+			"type": "string",
+			"minLength": 1
+		}
+	},
+	"required": [
+		"A simple demo app.",
+		"Welcome to React"
+	],
+	"additionalProperties": false
+}

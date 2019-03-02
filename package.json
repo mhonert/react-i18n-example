@@ -1,0 +1,50 @@
+{
+  "name": "react_i18n_example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "es2015-i18n-tag": "^1.4.1",
+    "locale2": "^2.3.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "universal-cookie": "^3.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "generate-schema": "i18n-tag-schema ./src --schema ./translation.schema.json",
+    "validate-translations": "i18n-tag-schema ./src/i18n/translations --validate --schema ./translation.schema.json",
+    "update-i18n": "run-s generate-schema validate-translations"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "i18n-tag-schema": "^2.5.0",
+    "lint-staged": "^8.1.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
